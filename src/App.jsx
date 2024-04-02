@@ -11,7 +11,7 @@ function App() {
 		<div
 			className={`${
 				toogleMode && "bg-black"
-			} h-screen w-full font-poppins`}
+			} min-h-screen w-full font-poppins`}
 		>
 			<main className="min-h-screen max-w-[960px] mx-auto py-4 px-2">
 				<Header toogleMode={toogleMode} setToogleMode={setToogleMode} />
