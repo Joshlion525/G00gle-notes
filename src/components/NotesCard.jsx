@@ -11,11 +11,11 @@ const NotesCard = ({ notes, deleteNotes }) => {
 				>
 					<p className="">{note.text}</p>
 					<div className=" flex items-center justify-between">
-						<p>{note.date}</p>
+						<p>{note.date} {note.time}</p>
 						<button onClick={() => {
                             deleteNotes(note.id)
                         }}>
-							<MdDeleteForever className="h-6 w-6" />
+							<MdDeleteForever className="h-6 w-6 text-red-600" />
 						</button>
 					</div>
 				</div>

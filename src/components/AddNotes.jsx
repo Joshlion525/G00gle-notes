@@ -5,7 +5,12 @@ import { v4 as uuidv4 } from "uuid";
 const AddNotes = ({ setNotes }) => {
 	const [newNotes, setNewNotes] = useState("");
 	const characterLimit = 200;
-    const date = new Date();
+	const date = new Date();
+	const time = date.toLocaleString("en-US", {
+		hour: "numeric",
+		minute: "numeric",
+		hour12: true,
+	});
 	const todayDate = date.toLocaleDateString();
 
 	const handleChange = (e) => {
@@ -15,7 +20,8 @@ const AddNotes = ({ setNotes }) => {
 		const note = {
 			id: uuidv4(),
 			text: newNotes,
-            date: todayDate
+			date: todayDate,
+			time: time,
 		};
 		setNotes((prevNotes) => {
 			const updatedNotes = [...prevNotes, note];
