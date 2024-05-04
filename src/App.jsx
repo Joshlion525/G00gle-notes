@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Header from "./components/Header";
 import SearchBar from "./components/SearchBar";
 import Notes from "./components/Notes";
+import { DarkModeContext } from "./context/DarkModeContext";
 
 function App() {
-	const [toogleMode, setToogleMode] = useState(false);
+	const { toogleMode } = useContext(DarkModeContext)
 	const [search, setSearch] = useState("");
 
 	return (
@@ -14,9 +15,9 @@ function App() {
 			} min-h-screen w-full font-poppins`}
 		>
 			<main className="min-h-screen max-w-[960px] mx-auto py-4 px-2">
-				<Header toogleMode={toogleMode} setToogleMode={setToogleMode} />
+				<Header/>
 				<SearchBar search={search} setSearch={setSearch} />
-        <Notes search={search} />
+				<Notes search={search} />
 			</main>
 		</div>
 	);

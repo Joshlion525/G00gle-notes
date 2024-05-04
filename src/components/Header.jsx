@@ -1,7 +1,10 @@
-import React from "react";
+import React, {useContext} from "react";
 import { MdDarkMode, MdLightMode } from "react-icons/md";
+import { DarkModeContext } from "../context/DarkModeContext";
 
-const Header = ({ toogleMode, setToogleMode }) => {
+const Header = () => {
+	const { toogleMode, setToogleMode } = useContext(DarkModeContext);
+
 	return (
 		<div className="flex items-center justify-between">
 			<h1 className={`${toogleMode && "text-white"} font-bold text-2xl`}>
